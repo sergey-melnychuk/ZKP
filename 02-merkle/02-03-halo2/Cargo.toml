@@ -1,0 +1,15 @@
+[package]
+name = "merkle"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+halo2_proofs = "0.3"
+halo2_gadgets = "0.3"
+ff = "0.13"
+group = "0.13"
+pasta_curves = "0.5"
+rand = "0.8"
+
+[dev-dependencies]
+criterion = "0.5"

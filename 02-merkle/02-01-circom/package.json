@@ -1,0 +1,26 @@
+{
+  "name": "02-merkle",
+  "version": "1.0.0",
+  "description": "ZKP",
+  "type": "module",
+  "scripts": {
+    "compile": "./compile.sh",
+    "deploy": "npx hardhat run scripts/1_deploy.js --network localhost",
+    "register": "npx hardhat run scripts/2_register.js --network localhost",
+    "prove": "npx hardhat run scripts/3_prove.js --network localhost",
+    "submit": "npx hardhat run scripts/4_submit.js --network localhost",
+    "test": "npx hardhat test",
+    "node": "npx hardhat node"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.4"
+  },
+  "dependencies": {
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "snarkjs": "^0.7.3"
+  }
+}

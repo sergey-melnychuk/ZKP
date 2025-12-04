@@ -1,0 +1,10 @@
+sudoku_js/
+
+*.r1cs
+*.sym
+*.wtns
+*.ptau
+*.zkey
+*.json
+
+*.sol

@@ -1,0 +1,5 @@
+secret = "12345"
+siblings = ["0", "0", "0"]
+path_indices = [0, 0, 0]
+root = "0x12f5fa01571b3ee8cd38456b7170d5732c5478857e6e0598c5313b9cee84d389"
+nullifier = "0x1fed07ad686a727dfc33b91206d526e61f519dca9c5054ae729231c201717633"
