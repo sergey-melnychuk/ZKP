@@ -10,7 +10,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│              Proof Recursion Architecture                │
+│              Proof Recursion Architecture               │
 └─────────────────────────────────────────────────────────┘
 
 Base Layer (Groth16):
@@ -22,15 +22,15 @@ Base Layer (Groth16):
             ↓
 ┌─────────────────────────────────────────────────────────┐
 │  Aggregation Layer (PLONK/Halo2)                        │
-│                                                          │
+│                                                         │
 │  Verifier Circuit:                                      │
-│  - Verify Proof 1 (30K constraints)                   │
-│  - Verify Proof 2 (30K constraints)                    │
-│  - Verify Proof 3 (30K constraints)                    │
-│  - ...                                                   │
+│  - Verify Proof 1 (30K constraints)                     │
+│  - Verify Proof 2 (30K constraints)                     │
+│  - Verify Proof 3 (30K constraints)                     │
+│  - ...                                                  │
 │  - Aggregate public inputs                              │
 │  - Output: Single aggregated proof                      │
-│                                                          │
+│                                                         │
 │  Result: 1 proof instead of N proofs                    │
 └─────────────────────────────────────────────────────────┘
             ↓
