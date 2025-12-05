@@ -147,11 +147,11 @@ fn main() {
     // Load files
     println!("Loading files...");
     let proof_json =
-        fs::read_to_string("../sudoku/proof.json").expect("Failed to read proof.json");
-    let vk_json = fs::read_to_string("../sudoku/verification_key.json")
+        fs::read_to_string("../01-01-sudoku/proof.json").expect("Failed to read proof.json");
+    let vk_json = fs::read_to_string("../01-01-sudoku/verification_key.json")
         .expect("Failed to read verification_key.json");
     let public_json =
-        fs::read_to_string("../sudoku/public.json").expect("Failed to read public.json");
+        fs::read_to_string("../01-01-sudoku/public.json").expect("Failed to read public.json");
 
     // Parse JSON
     println!("Parsing JSON...");
