@@ -553,7 +553,6 @@ Every project should have a README following this structure:
 
 ## References
 [Links to papers, resources used]
-```
 
 ### Recommended Project Structure
 
