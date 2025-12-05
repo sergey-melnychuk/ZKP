@@ -45,18 +45,18 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│ Traditional TLS: User ←→ Server                             │
-│ Problem: Only user can see data, can't prove to others     │
+│ Traditional TLS: User ←→ Server                              │
+│ Problem: Only user can see data, can't prove to others       │
 └──────────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────────┐
-│ TLSNotary: User ←→ Notary ←→ Server (3-party)             │
-│ Solution: Notary witnesses data, signs attestation          │
+│ TLSNotary: User ←→ Notary ←→ Server (3-party)                │
+│ Solution: Notary witnesses data, signs attestation           │
 └──────────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────────┐
-│ zk-TLS: User generates ZK proof from TLSNotary transcript   │
-│ Result: Prove properties without revealing sensitive data   │
+│ zk-TLS: User generates ZK proof from TLSNotary transcript    │
+│ Result: Prove properties without revealing sensitive data    │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -75,20 +75,20 @@
 ```
 Client                                    Server
   |                                         |
-  |--- ClientHello (supported ciphers) --->|
-  |    + key_share (ephemeral public key)  |
+  |--- ClientHello (supported ciphers) ---->|
+  |    + key_share (ephemeral public key)   |
   |                                         |
   |<-- ServerHello (chosen cipher) ---------|
-  |    + key_share (ephemeral public key)  |
-  |    + Certificate (server's public key) |
-  |    + CertificateVerify (signature)     |
-  |    + Finished (verify handshake)       |
+  |    + key_share (ephemeral public key)   |
+  |    + Certificate (server's public key)  |
+  |    + CertificateVerify (signature)      |
+  |    + Finished (verify handshake)        |
   |                                         |
-  |--- Finished (verify handshake) ------->|
+  |--- Finished (verify handshake) -------->|
   |                                         |
-  |========== Encrypted Channel ===========|
+  |========== Encrypted Channel ============|
   |                                         |
-  |--- GET /api/balance ------------------>|
+  |--- GET /api/balance ------------------->|
   |<-- {"balance": 100000} -----------------|
   |                                         |
 ```

@@ -407,39 +407,39 @@ Which is true iff the witness satisfies all constraints!
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                      TRUSTED SETUP                           │
-│                                                              │
+│                      TRUSTED SETUP                          │
+│                                                             │
 │  Input: Circuit (R1CS matrices A, B, C)                     │
 │  Output: Proving Key (pk), Verification Key (vk)            │
-│                                                              │
-│  1. Sample toxic waste: α, β, γ, δ, τ                      │
-│  2. Compute QAP polynomials at τ                             │
-│  3. Encrypt evaluations in G1, G2                            │
-│  4. Destroy toxic waste                                      │
+│                                                             │
+│  1. Sample toxic waste: α, β, γ, δ, τ                       │
+│  2. Compute QAP polynomials at τ                            │
+│  3. Encrypt evaluations in G1, G2                           │
+│  4. Destroy toxic waste                                     │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
-│                         PROVING                              │
-│                                                              │
+│                         PROVING                             │
+│                                                             │
 │  Input: Witness w, Public inputs x, Proving key pk          │
 │  Output: Proof π = (A, B, C)                                │
-│                                                              │
-│  1. Check witness satisfies R1CS                             │
+│                                                             │
+│  1. Check witness satisfies R1CS                            │
 │  2. Compute A(τ), B(τ), C(τ) from witness                   │
 │  3. Compute quotient H(x) = (A·B - C) / Z                   │
-│  4. Construct proof with blinding: (A, B, C)                 │
+│  4. Construct proof with blinding: (A, B, C)                │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
-│                      VERIFICATION                            │
-│                                                              │
-│  Input: Proof π, Public inputs x, Verification key vk        │
-│  Output: ACCEPT or REJECT                                    │
-│                                                              │
+│                      VERIFICATION                           │
+│                                                             │
+│  Input: Proof π, Public inputs x, Verification key vk       │
+│  Output: ACCEPT or REJECT                                   │
+│                                                             │
 │  1. Compute public input term vkₓ                           │
-│  2. Check pairing equation:                                  │
-│     e(A, B) = e(α, β) · e(vkₓ, γ) · e(C, δ)               │
-│  3. Return ACCEPT if equation holds                          │
+│  2. Check pairing equation:                                 │
+│     e(A, B) = e(α, β) · e(vkₓ, γ) · e(C, δ)                 │
+│  3. Return ACCEPT if equation holds                         │
 └─────────────────────────────────────────────────────────────┘
 ```
 

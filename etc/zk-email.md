@@ -191,18 +191,18 @@ e = exponent (usually 65537)
 
 ┌─────────────────────────────────────────────────────────────────┐
 │ 1. Frontend (User Interface)                                    │
-│    - Email upload                                                │
+│    - Email upload                                               │
 │    - Field selection (what to prove)                            │
-│    - Proof generation trigger                                    │
+│    - Proof generation trigger                                   │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │ 2. Parser (Email Processing)                                    │
 │    - Extract DKIM signature                                     │
-│    - Parse headers (From, To, Subject, Date)                   │
+│    - Parse headers (From, To, Subject, Date)                    │
 │    - Extract body                                               │
 │    - Canonicalize text                                          │
-│    - Fetch DKIM public key from DNS                            │
+│    - Fetch DKIM public key from DNS                             │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐

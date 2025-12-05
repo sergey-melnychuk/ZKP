@@ -10,7 +10,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    zkVM Architecture                      │
+│                    zkVM Architecture                    │
 └─────────────────────────────────────────────────────────┘
 
 Program (High-level):
@@ -21,30 +21,30 @@ Program (High-level):
             ↓
 ┌─────────────────────────────────────────────────────────┐
 │  Compilation: Program → Bytecode                        │
-│                                                          │
+│                                                         │
 │  Bytecode:                                              │
-│    PUSH 1                                                │
-│    PUSH n                                                │
-│    LT                                                    │
-│    JUMP_IF_FALSE label1                                  │
-│    PUSH n                                                │
-│    RETURN                                                │
-│  label1:                                                 │
+│    PUSH 1                                               │
+│    PUSH n                                               │
+│    LT                                                   │
+│    JUMP_IF_FALSE label1                                 │
+│    PUSH n                                               │
+│    RETURN                                               │
+│  label1:                                                │
 │    CALL fibonacci(n-1)                                  │
 │    CALL fibonacci(n-2)                                  │
-│    ADD                                                   │
-│    RETURN                                                │
+│    ADD                                                  │
+│    RETURN                                               │
 └─────────────────────────────────────────────────────────┘
             ↓
 ┌─────────────────────────────────────────────────────────┐
-│  VM Circuit (Halo2/Circom)                             │
-│                                                          │
-│  State:                                                  │
-│    - Program counter (PC)                              │
-│    - Stack (values)                                      │
-│    - Memory (optional)                                   │
-│    - Registers (optional)                                │
-│                                                          │
+│  VM Circuit (Halo2/Circom)                              │
+│                                                         │
+│  State:                                                 │
+│    - Program counter (PC)                               │
+│    - Stack (values)                                     │
+│    - Memory (optional)                                  │
+│    - Registers (optional)                               │
+│                                                         │
 │  Instructions:                                          │
 │    - PUSH: Add value to stack                           │
 │    - POP: Remove from stack                             │
@@ -52,7 +52,7 @@ Program (High-level):
 │    - MUL: Pop 2, push product                           │
 │    - JUMP: Set PC                                       │
 │    - CALL: Push PC, jump to function                    │
-│                                                          │
+│                                                         │
 │  Constraint: Each instruction transition is valid       │
 └─────────────────────────────────────────────────────────┘
             ↓
