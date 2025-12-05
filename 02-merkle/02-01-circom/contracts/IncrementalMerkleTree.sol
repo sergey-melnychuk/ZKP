@@ -4,18 +4,18 @@ pragma solidity ^0.8.0;
 import "./PoseidonT3.sol";
 
 contract IncrementalMerkleTree {
-    uint32 public constant DEPTH = 3;
-    uint32 public constant MAX_LEAVES = 8;
+    uint32 public constant DEPTH = 8;
+    uint32 public constant MAX_LEAVES = 256;
     
     uint32 public nextIndex = 0;
     uint256 public root;
     
-    uint256[DEPTH] public filledSubtrees;
-    uint256[DEPTH] public zeros;
+    uint256[DEPTH] private filledSubtrees;
+    uint256[DEPTH] private zeros;
     
-    mapping(uint32 => uint256) public leaves;
+    mapping(uint32 => uint256) private leaves;
     
-    event LeafInserted(uint32 indexed index, uint256 leaf, uint256 root);
+    event LeafInserted(uint256 index, uint256 root);
     
     constructor() {
         zeros[0] = 0;
@@ -54,17 +54,17 @@ contract IncrementalMerkleTree {
         }
         
         root = currentHash;
-        emit LeafInserted(index, commitment, root);
+        emit LeafInserted(index, root);
         return index;
     }
     
-    function getPath(uint32 leafIndex) external view returns (
+    function getPath(uint32 index) external view returns (
         uint256[DEPTH] memory siblings,
         uint8[DEPTH] memory pathIndices
     ) {
-        require(leafIndex < nextIndex, "Leaf not found");
+        require(index < nextIndex, "Leaf not found");
         
-        uint32 currentIndex = leafIndex;
+        uint32 currentIndex = index;
         
         for (uint32 level = 0; level < DEPTH; level++) {
             bool isLeft = currentIndex % 2 == 0;

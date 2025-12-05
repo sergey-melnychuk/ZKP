@@ -4,8 +4,8 @@ include "circomlib/circuits/poseidon.circom";
 
 template MerkleProof() {
     signal input secret;
-    signal input siblings[3];
-    signal input pathIndices[3];
+    signal input siblings[8];
+    signal input pathIndices[8];
     
     signal input root;
     signal input nullifier;
@@ -15,14 +15,14 @@ template MerkleProof() {
     leafHasher.inputs[0] <== secret;
     
     // Declare all signals outside loop
-    component hashers[3];
-    signal hashes[4];
-    signal lefts[3];
-    signal rights[3];
+    component hashers[8];
+    signal hashes[9];
+    signal lefts[8];
+    signal rights[8];
     
     hashes[0] <== leafHasher.out;
     
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 8; i++) {
         hashers[i] = Poseidon(2);
         
         // Compute left and right based on pathIndices[i]
@@ -35,7 +35,7 @@ template MerkleProof() {
     }
     
     // Verify root
-    root === hashes[3];
+    root === hashes[8];
     
     // Verify nullifier
     component nullHasher = Poseidon(1);
