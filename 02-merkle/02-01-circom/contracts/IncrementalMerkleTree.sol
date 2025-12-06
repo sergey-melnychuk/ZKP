@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 import "./PoseidonT3.sol";
 
 contract IncrementalMerkleTree {
-    uint32 public constant DEPTH = 8;
-    uint32 public constant MAX_LEAVES = 256;
+    uint32 public constant DEPTH = 4;
+    uint32 public constant MAX_LEAVES = 16;
     
     uint32 public nextIndex = 0;
     uint256 public root;
